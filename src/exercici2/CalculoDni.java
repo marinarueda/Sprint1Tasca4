@@ -15,7 +15,7 @@ public class CalculoDni {
         this.numero = numero;
     }
 
-    public char calcularLetra(int[] numero) {
+    public char calcularLetra(int numero) {
         String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
         char letra = ' ';
         if (numero == 8) {

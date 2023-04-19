@@ -12,7 +12,7 @@ public class CalculoDniTest {
 
         for(int i = 0; i < numeros.length; i++) {
             CalculoDni dni = new CalculoDni(numeros[i]);
-            char letraCalculada = dni.calcularLetra(numeros);
+            char letraCalculada = dni.calcularLetra(numeros[i]);
             assertEquals(letrasEsperadas[i], letraCalculada);
         }
     }
