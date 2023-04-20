@@ -13,6 +13,7 @@ public class MesesTest {
             int actualSize = meses.size();
 
             Assert.assertEquals(expectedSize, actualSize);
+            System.out.println("El test testMesesSize ha pasado correctamente. Hay 12 meses");
         }
 
     @Test
@@ -21,6 +22,7 @@ public class MesesTest {
         String actualMonth = meses.get(7);
 
         Assert.assertEquals(expectedMonth, actualMonth);
+        System.out.println("El test testAgostoEnPosicion8 ha pasado correctamente.");
     }
 }
 

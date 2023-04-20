@@ -1,22 +1,28 @@
 package exercici2;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-public class CalculoDniTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    @Test
-    public void testCalcularLetra() {
-        int[] numeros = {12345678, 87654321, 47277732, 54857896, 87458965, 12547852, 63598452, 56985632, 41258965, 45289652};
-        char[] letrasEsperadas = {'Z', 'E', 'J', 'X', 'R', 'G', 'M', 'E', 'P', 'W'};
+    public class CalculoDniTest {
 
-        for(int i = 0; i < numeros.length; i++) {
-            CalculoDni dni = new CalculoDni(numeros[i]);
-            char letraCalculada = dni.calcularLetra(numeros[i]);
-            assertEquals(letrasEsperadas[i], letraCalculada);
+        @ParameterizedTest
+        @ValueSource(ints = {12345678, 87654321, 47277732, 54857896, 87458965, 12547852, 63598452, 56985632, 41258965, 45289652})
+        public void testCalcularLetra(int numero, char j) {
+            CalculoDni dni = new CalculoDni(numero);
+            char letraCalculada = dni.calcularLetra();
+            char letraEsperada = obtenerLetraEsperada(numero);
+            assertEquals(letraEsperada, letraCalculada);
+        }
+
+        private char obtenerLetraEsperada(int numero) {
+            String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            return letras.charAt(numero % 23);
         }
     }
-}
+
+
 
 
 

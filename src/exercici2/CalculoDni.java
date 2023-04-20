@@ -15,13 +15,13 @@ public class CalculoDni {
         this.numero = numero;
     }
 
-    public char calcularLetra(int numero) {
+    public char calcularLetra() {
         String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
         char letra = ' ';
-        if (numero == 8) {
-            letra = letras.charAt(numero % 23);
-        } else {
+        if (String.valueOf(numero).length() != 8) {
             System.out.println("El DNI no es correcto");
+        } else {
+            letra = letras.charAt(numero % 23);
         }
         return letra;
     }
